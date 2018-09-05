@@ -1,0 +1,408 @@
+<html>
+<!---
+ENTRY       ath00940
+DEFINITION  Phenylpropanoid biosynthesis - Arabidopsis thaliana (thale cress)
+--->
+<head>
+<title>
+KEGG PATHWAY: Phenylpropanoid biosynthesis - Arabidopsis thaliana (thale cress)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+var image_height;
+$(function(){
+	$(window).bind('load',function(){
+  image_height = $("div.image").height()-10;
+	$("div.control").height(image_height-5);
+	$("#resizable").height(image_height);
+	});
+});
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Phenylpropanoid biosynthesis - Arabidopsis thaliana (thale cress)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=00940&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map00940.keg&query=ath&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+ath00940">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=ath00940&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Phenylpropanoids are a group of plant secondary metabolites derived from phenylalanine and having a wide variety of functions both as structural and signaling molecules. Phenylalanine is first converted to cinnamic acid by deamination. It is followed by hydroxylation and frequent methylation to generate coumaric acid and other acids with a phenylpropane (C6-C3) unit. Reduction of the CoA-activated carboxyl groups of these acids results in the corresponding aldehydes and alcohols. The alcohols are called monolignols, the starting compounds for biosynthesis of lignin.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="ec">Reference pathway (EC)</option>
+<option value="rn">Reference pathway (Reaction)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="ath.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="ath" selected>Arabidopsis thaliana (thale cress)</option>
+<option value="aly">Arabidopsis lyrata (lyrate rockcress)</option>
+<option value="crb">Capsella rubella</option>
+<option value="eus">Eutrema salsugineum</option>
+<option value="brp">Brassica rapa (field mustard)</option>
+<option value="cit">Citrus sinensis (Valencia orange)</option>
+<option value="cic">Citrus clementina (mandarin orange)</option>
+<option value="tcc">Theobroma cacao (cacao)</option>
+<option value="gmx">Glycine max (soybean)</option>
+<option value="pvu">Phaseolus vulgaris (common bean)</option>
+<option value="mtr">Medicago truncatula (barrel medic)</option>
+<option value="cam">Cicer arietinum (chickpea)</option>
+<option value="fve">Fragaria vesca (woodland strawberry)</option>
+<option value="pper">Prunus persica (peach)</option>
+<option value="pmum">Prunus mume (Japanese apricot)</option>
+<option value="mdm">Malus domestica (apple)</option>
+<option value="pxb">Pyrus x bretschneideri (Chinese white pear)</option>
+<option value="csv">Cucumis sativus (cucumber)</option>
+<option value="cmo">Cucumis melo (muskmelon)</option>
+<option value="rcu">Ricinus communis (castor bean)</option>
+<option value="pop">Populus trichocarpa (black cottonwood)</option>
+<option value="vvi">Vitis vinifera (wine grape)</option>
+<option value="sly">Solanum lycopersicum (tomato)</option>
+<option value="sot">Solanum tuberosum (potato)</option>
+<option value="osa">Oryza sativa japonica (Japanese rice) (RefSeq)</option>
+<option value="dosa">Oryza sativa japonica (Japanese rice) (RAPDB)</option>
+<option value="obr">Oryza brachyantha (malo sina)</option>
+<option value="bdi">Brachypodium distachyon</option>
+<option value="sbi">Sorghum bicolor (sorghum)</option>
+<option value="zma">Zea mays (maize)</option>
+<option value="sita">Setaria italica (foxtail millet)</option>
+<option value="pda">Phoenix dactylifera (date palm)</option>
+<option value="mus">Musa acuminata (wild Malaysian banana)</option>
+<option value="atr">Amborella trichopoda</option>
+<option value="smo">Selaginella moellendorffii</option>
+<option value="ppp">Physcomitrella patens subsp. patens</option>
+<option value="cre">Chlamydomonas reinhardtii</option>
+<option value="vcn">Volvox carteri f. nagariensis</option>
+<option value="bpg">Bathycoccus prasinos</option>
+<option value="csl">Coccomyxa subellipsoidea</option>
+<option value="cvr">Chlorella variabilis</option>
+<option value="cme">Cyanidioschyzon merolae</option>
+<option value="ccp">Chondrus crispus (carragheen)</option>
+</select>
+<input type="hidden" name="mapno" value="00940" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="ath00940" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+</form>
+</td></tr></table>
+
+
+<img src="/kegg/pathway/ath/ath00940.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=927,207,4	href="/dbget-bin/www_bget?C01527"	title="C01527 (Scopolin)" onmouseover="popupTimer(&quot;C01527&quot;, &quot;C01527 (Scopolin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1121,313,4	href="/dbget-bin/www_bget?C00933"	title="C00933 (Sinapine)" onmouseover="popupTimer(&quot;C00933&quot;, &quot;C00933 (Sinapine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1121,252,4	href="/dbget-bin/www_bget?C01175"	title="C01175 (1-O-Sinapoyl-beta-D-glucose)" onmouseover="popupTimer(&quot;C01175&quot;, &quot;C01175 (1-O-Sinapoyl-beta-D-glucose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1033,726,4	href="/dbget-bin/www_bget?C15806"	title="C15806 (Syringyl lignin)" onmouseover="popupTimer(&quot;C15806&quot;, &quot;C15806 (Syringyl lignin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=891,726,4	href="/dbget-bin/www_bget?C15807"	title="C15807 (5-Hydroxy-guaiacyl lignin)" onmouseover="popupTimer(&quot;C15807&quot;, &quot;C15807 (5-Hydroxy-guaiacyl lignin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=751,726,4	href="/dbget-bin/www_bget?C15805"	title="C15805 (Guaiacyl lignin)" onmouseover="popupTimer(&quot;C15805&quot;, &quot;C15805 (Guaiacyl lignin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=336,726,4	href="/dbget-bin/www_bget?C15804"	title="C15804 (p-Hydroxyphenyl lignin)" onmouseover="popupTimer(&quot;C15804&quot;, &quot;C15804 (p-Hydroxyphenyl lignin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=337,188,4	href="/dbget-bin/www_bget?C00082"	title="C00082 (L-Tyrosine)" onmouseover="popupTimer(&quot;C00082&quot;, &quot;C00082 (L-Tyrosine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=891,252,4	href="/dbget-bin/www_bget?C05619"	title="C05619 (5-Hydroxyferulic acid methyl ester)" onmouseover="popupTimer(&quot;C05619&quot;, &quot;C05619 (5-Hydroxyferulic acid methyl ester)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=702,207,4	href="/dbget-bin/www_bget?C04366"	title="C04366 (3-(2-Carboxyethenyl)-cis,cis-muconate)" onmouseover="popupTimer(&quot;C04366&quot;, &quot;C04366 (3-(2-Carboxyethenyl)-cis,cis-muconate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=428,296,4	href="/dbget-bin/www_bget?C05627"	title="C05627 (4-Hydroxystyrene)" onmouseover="popupTimer(&quot;C05627&quot;, &quot;C05627 (4-Hydroxystyrene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=399,727,4	href="/dbget-bin/www_bget?C05855"	title="C05855 (4-Hydroxycinnamyl alcohol 4-D-glucoside)" onmouseover="popupTimer(&quot;C05855&quot;, &quot;C05855 (4-Hydroxycinnamyl alcohol 4-D-glucoside)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1094,724,4	href="/dbget-bin/www_bget?C01533"	title="C01533 (Syringin)" onmouseover="popupTimer(&quot;C01533&quot;, &quot;C01533 (Syringin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=813,726,4	href="/dbget-bin/www_bget?C00761"	title="C00761 (Coniferin)" onmouseover="popupTimer(&quot;C00761&quot;, &quot;C00761 (Coniferin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=705,295,4	href="/dbget-bin/www_bget?C06224"	title="C06224 (3,4-Dihydroxystyrene)" onmouseover="popupTimer(&quot;C06224&quot;, &quot;C06224 (3,4-Dihydroxystyrene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=891,603,4	href="/dbget-bin/www_bget?C12205"	title="C12205 (5-Hydroxyconiferyl alcohol)" onmouseover="popupTimer(&quot;C12205&quot;, &quot;C12205 (5-Hydroxyconiferyl alcohol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=891,396,4	href="/dbget-bin/www_bget?C12203"	title="C12203 (5-Hydroxyferuloyl-CoA)" onmouseover="popupTimer(&quot;C12203&quot;, &quot;C12203 (5-Hydroxyferuloyl-CoA)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1033,603,4	href="/dbget-bin/www_bget?C02325"	title="C02325 (Sinapyl alcohol)" onmouseover="popupTimer(&quot;C02325&quot;, &quot;C02325 (Sinapyl alcohol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1033,396,4	href="/dbget-bin/www_bget?C00411"	title="C00411 (Sinapoyl-CoA)" onmouseover="popupTimer(&quot;C00411&quot;, &quot;C00411 (Sinapoyl-CoA)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1208,252,4	href="/dbget-bin/www_bget?C02887"	title="C02887 (Sinapoyl malate)" onmouseover="popupTimer(&quot;C02887&quot;, &quot;C02887 (Sinapoyl malate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1033,252,4	href="/dbget-bin/www_bget?C00482"	title="C00482 (Sinapate)" onmouseover="popupTimer(&quot;C00482&quot;, &quot;C00482 (Sinapate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=751,396,4	href="/dbget-bin/www_bget?C00406"	title="C00406 (Feruloyl-CoA)" onmouseover="popupTimer(&quot;C00406&quot;, &quot;C00406 (Feruloyl-CoA)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1033,517,4	href="/dbget-bin/www_bget?C05610"	title="C05610 (Sinapoyl aldehyde)" onmouseover="popupTimer(&quot;C05610&quot;, &quot;C05610 (Sinapoyl aldehyde)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=840,207,4	href="/dbget-bin/www_bget?C01752"	title="C01752 (Scopoletin)" onmouseover="popupTimer(&quot;C01752&quot;, &quot;C01752 (Scopoletin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=891,517,4	href="/dbget-bin/www_bget?C12204"	title="C12204 (5-Hydroxyconiferaldehyde)" onmouseover="popupTimer(&quot;C12204&quot;, &quot;C12204 (5-Hydroxyconiferaldehyde)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=336,604,4	href="/dbget-bin/www_bget?C02646"	title="C02646 (4-Coumaryl alcohol)" onmouseover="popupTimer(&quot;C02646&quot;, &quot;C02646 (4-Coumaryl alcohol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=336,517,4	href="/dbget-bin/www_bget?C05608"	title="C05608 (4-Hydroxycinnamyl aldehyde)" onmouseover="popupTimer(&quot;C05608&quot;, &quot;C05608 (4-Hydroxycinnamyl aldehyde)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=336,396,4	href="/dbget-bin/www_bget?C00223"	title="C00223 (p-Coumaroyl-CoA)" onmouseover="popupTimer(&quot;C00223&quot;, &quot;C00223 (p-Coumaroyl-CoA)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=174,394,4	href="/dbget-bin/www_bget?C00540"	title="C00540 (Cinnamoyl-CoA)" onmouseover="popupTimer(&quot;C00540&quot;, &quot;C00540 (Cinnamoyl-CoA)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=609,604,4	href="/dbget-bin/www_bget?C12206"	title="C12206 (Caffeyl alcohol)" onmouseover="popupTimer(&quot;C12206&quot;, &quot;C12206 (Caffeyl alcohol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=174,252,4	href="/dbget-bin/www_bget?C00423"	title="C00423 (trans-Cinnamate)" onmouseover="popupTimer(&quot;C00423&quot;, &quot;C00423 (trans-Cinnamate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=106,379,4	href="/dbget-bin/www_bget?C01772"	title="C01772 (trans-2-Hydroxycinnamate)" onmouseover="popupTimer(&quot;C01772&quot;, &quot;C01772 (trans-2-Hydroxycinnamate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=106,554,4	href="/dbget-bin/www_bget?C05839"	title="C05839 (cis-beta-D-Glucosyl-2-hydroxycinnamate)" onmouseover="popupTimer(&quot;C05839&quot;, &quot;C05839 (cis-beta-D-Glucosyl-2-hydroxycinnamate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=515,457,4	href="/dbget-bin/www_bget?C00852"	title="C00852 (Chlorogenate)" onmouseover="popupTimer(&quot;C00852&quot;, &quot;C00852 (Chlorogenate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=751,252,4	href="/dbget-bin/www_bget?C01494"	title="C01494 (Ferulate)" onmouseover="popupTimer(&quot;C01494&quot;, &quot;C01494 (Ferulate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=106,728,4	href="/dbget-bin/www_bget?C05851"	title="C05851 (Coumarin)" onmouseover="popupTimer(&quot;C05851&quot;, &quot;C05851 (Coumarin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=429,337,4	href="/dbget-bin/www_bget?C02947"	title="C02947 (4-Coumaroylshikimate)" onmouseover="popupTimer(&quot;C02947&quot;, &quot;C02947 (4-Coumaroylshikimate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=337,252,4	href="/dbget-bin/www_bget?C00811"	title="C00811 (4-Coumarate)" onmouseover="popupTimer(&quot;C00811&quot;, &quot;C00811 (4-Coumarate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=515,337,4	href="/dbget-bin/www_bget?C10434"	title="C10434 (5-O-Caffeoylshikimic acid)" onmouseover="popupTimer(&quot;C10434&quot;, &quot;C10434 (5-O-Caffeoylshikimic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=429,457,4	href="/dbget-bin/www_bget?C12208"	title="C12208 (p-Coumaroyl quinic acid)" onmouseover="popupTimer(&quot;C12208&quot;, &quot;C12208 (p-Coumaroyl quinic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=174,515,4	href="/dbget-bin/www_bget?C00903"	title="C00903 (Cinnamaldehyde)" onmouseover="popupTimer(&quot;C00903&quot;, &quot;C00903 (Cinnamaldehyde)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=106,466,4	href="/dbget-bin/www_bget?C05158"	title="C05158 (trans-beta-D-Glucosyl-2-hydroxycinnamate)" onmouseover="popupTimer(&quot;C05158&quot;, &quot;C05158 (trans-beta-D-Glucosyl-2-hydroxycinnamate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=612,252,4	href="/dbget-bin/www_bget?C01197"	title="C01197 (Caffeate)" onmouseover="popupTimer(&quot;C01197&quot;, &quot;C01197 (Caffeate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=174,186,4	href="/dbget-bin/www_bget?C00079"	title="C00079 (L-Phenylalanine)" onmouseover="popupTimer(&quot;C00079&quot;, &quot;C00079 (L-Phenylalanine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=608,396,4	href="/dbget-bin/www_bget?C00323"	title="C00323 (Caffeoyl-CoA)" onmouseover="popupTimer(&quot;C00323&quot;, &quot;C00323 (Caffeoyl-CoA)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=106,641,4	href="/dbget-bin/www_bget?C05838"	title="C05838 (cis-2-Hydroxycinnamate)" onmouseover="popupTimer(&quot;C05838&quot;, &quot;C05838 (cis-2-Hydroxycinnamate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=751,604,4	href="/dbget-bin/www_bget?C00590"	title="C00590 (Coniferyl alcohol)" onmouseover="popupTimer(&quot;C00590&quot;, &quot;C00590 (Coniferyl alcohol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=609,517,4	href="/dbget-bin/www_bget?C10945"	title="C10945 (Caffeic aldehyde)" onmouseover="popupTimer(&quot;C10945&quot;, &quot;C10945 (Caffeic aldehyde)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=751,517,4	href="/dbget-bin/www_bget?C02666"	title="C02666 (Coniferyl aldehyde)" onmouseover="popupTimer(&quot;C02666&quot;, &quot;C02666 (Coniferyl aldehyde)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=429,150,4	href="/dbget-bin/www_bget?C18069"	title="C18069 (N1,N5,N10-Tricoumaroyl spermidine)" onmouseover="popupTimer(&quot;C18069&quot;, &quot;C18069 (N1,N5,N10-Tricoumaroyl spermidine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=612,150,4	href="/dbget-bin/www_bget?C18070"	title="C18070 (N1,N5,N10-Tricaffeoyl spermidine)" onmouseover="popupTimer(&quot;C18070&quot;, &quot;C18070 (N1,N5,N10-Tricaffeoyl spermidine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=751,150,4	href="/dbget-bin/www_bget?C18071"	title="C18071 (N1,N5,N10-Triferuloyl spermidine)" onmouseover="popupTimer(&quot;C18071&quot;, &quot;C18071 (N1,N5,N10-Triferuloyl spermidine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=891,150,4	href="/dbget-bin/www_bget?C18072"	title="C18072 (N1,N5,N10-Tri-(hydroxyferuloyl)-spermidine)" onmouseover="popupTimer(&quot;C18072&quot;, &quot;C18072 (N1,N5,N10-Tri-(hydroxyferuloyl)-spermidine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=358,108,4	href="/dbget-bin/www_bget?C00315"	title="C00315 (Spermidine)" onmouseover="popupTimer(&quot;C00315&quot;, &quot;C00315 (Spermidine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1033,150,4	href="/dbget-bin/www_bget?C18073"	title="C18073 (N1,N5-Tri-di(hydroxyferuloyl)-N10-sinapoyl-spermidine)" onmouseover="popupTimer(&quot;C18073&quot;, &quot;C18073 (N1,N5-Tri-di(hydroxyferuloyl)-N10-sinapoyl-spermidine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=626,712,4	href="/dbget-bin/www_bget?C10469"	title="C10469 (Isoeugenol)" onmouseover="popupTimer(&quot;C10469&quot;, &quot;C10469 (Isoeugenol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=211,634,4	href="/dbget-bin/www_bget?C20465"	title="C20465 (Coumaryl acetate)" onmouseover="popupTimer(&quot;C20465&quot;, &quot;C20465 (Coumaryl acetate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=626,774,4	href="/dbget-bin/www_bget?C10478"	title="C10478 (Methylisoeugenol)" onmouseover="popupTimer(&quot;C10478&quot;, &quot;C10478 (Methylisoeugenol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=548,712,4	href="/dbget-bin/www_bget?C10453"	title="C10453 (Eugenol)" onmouseover="popupTimer(&quot;C10453&quot;, &quot;C10453 (Eugenol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=548,774,4	href="/dbget-bin/www_bget?C10454"	title="C10454 (Methyleugenol)" onmouseover="popupTimer(&quot;C10454&quot;, &quot;C10454 (Methyleugenol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=211,712,4	href="/dbget-bin/www_bget?C20464"	title="C20464 (Isochavicol)" onmouseover="popupTimer(&quot;C20464&quot;, &quot;C20464 (Isochavicol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=211,774,4	href="/dbget-bin/www_bget?C10428"	title="C10428 (Anethole)" onmouseover="popupTimer(&quot;C10428&quot;, &quot;C10428 (Anethole)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=142,712,4	href="/dbget-bin/www_bget?C16930"	title="C16930 (Chavicol)" onmouseover="popupTimer(&quot;C16930&quot;, &quot;C16930 (Chavicol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=142,774,4	href="/dbget-bin/www_bget?C10452"	title="C10452 (Estragole)" onmouseover="popupTimer(&quot;C10452&quot;, &quot;C10452 (Estragole)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=626,634,4	href="/dbget-bin/www_bget?C20225"	title="C20225 (Coniferyl acetate)" onmouseover="popupTimer(&quot;C20225&quot;, &quot;C20225 (Coniferyl acetate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=126,203,172,220	href="/dbget-bin/www_bget?ath:AT2G37040+ath:AT3G10340+ath:AT3G53260+ath:AT5G04230"	title="AT2G37040 (PAL1), AT3G10340 (PAL4), AT3G53260 (PAL2), AT5G04230 (PAL3)" />
+<area shape=rect	coords=152,308,198,325	href="/dbget-bin/www_bget?ath:AT1G51680+ath:AT1G62940+ath:AT1G65060+ath:AT3G21230+ath:AT3G21240+ath:AT4G05160+ath:AT4G19010"	title="AT1G51680 (4CL1), AT1G62940 (ACOS5), AT1G65060 (4CL3), AT3G21230 (4CL5), AT3G21240 (4CL2), AT4G05160, AT4G19010" />
+<area shape=rect	coords=83,583,129,600	href="/dbget-bin/www_bget?ath:AT1G02850+ath:AT1G26560+ath:AT1G45191+ath:AT1G61810+ath:AT1G61820+ath:AT1G66270+ath:AT1G66280+ath:AT1G75940+ath:AT2G25630+ath:AT2G32860+ath:AT2G44450+ath:AT2G44460+ath:AT2G44470+ath:AT2G44480+ath:AT2G44490+ath:AT3G03640+ath:AT3G09260+ath:AT3G18080+ath:AT3G21370+ath:AT3G47000+ath:AT3G47010+ath:AT3G47040+ath:AT3G47050+ath:AT3G60120+ath:AT3G60130+ath:AT3G60140+ath:AT3G62750+ath:AT4G21760+ath:AT4G22100+ath:AT4G27830+ath:AT5G04885+ath:AT5G20940+ath:AT5G20950+ath:AT5G24540+ath:AT5G24550+ath:AT5G28510+ath:AT5G36890+ath:AT5G42260+ath:AT5G44640+ath:AT5G54570"	title="AT1G02850 (BGLU11), AT1G26560 (BGLU40), AT1G45191, AT1G61810 (BGLU45), AT1G61820 (BGLU46), AT1G66270 (BGLU21), AT1G66280 (BGLU22), AT1G75940 (ATA27), AT2G25630 (BGLU14), AT2G32860 (BGLU33), AT2G44450 (BGLU15), AT2G44460 (BGLU28), AT2G44470 (BGLU29), AT2G44480 (BGLU17), AT2G44490 (PEN2), AT3G03640 (BGLU25), AT3G09260 (PYK10), AT3G18080 (BGLU44), AT3G21370 (BGLU19), AT3G47000, AT3G47010, AT3G47040, AT3G47050, AT3G60120 (BGLU27), AT3G60130 (BGLU16), AT3G60140 (DIN2), AT3G62750 (BGLU8), AT4G21760 (BGLU47), AT4G22100 (BGLU3), AT4G27830 (BGLU10), AT5G04885, AT5G20940, AT5G20950, AT5G24540 (BGLU31), AT5G24550 (BGLU32), AT5G28510 (BGLU24), AT5G36890 (BGLU42), AT5G42260 (BGLU12), AT5G44640 (BGLU13), AT5G54570 (BGLU41)" />
+<area shape=rect	coords=152,444,198,461	href="/dbget-bin/www_bget?ath:AT1G15950+ath:AT1G80820"	title="AT1G15950 (CCR1), AT1G80820 (CCR2)" />
+<area shape=rect	coords=312,469,358,486	href="/dbget-bin/www_bget?ath:AT1G15950+ath:AT1G80820"	title="AT1G15950 (CCR1), AT1G80820 (CCR2)" />
+<area shape=rect	coords=313,308,359,325	href="/dbget-bin/www_bget?ath:AT1G51680+ath:AT1G62940+ath:AT1G65060+ath:AT3G21230+ath:AT3G21240+ath:AT4G05160+ath:AT4G19010"	title="AT1G51680 (4CL1), AT1G62940 (ACOS5), AT1G65060 (4CL3), AT3G21230 (4CL5), AT3G21240 (4CL2), AT4G05160, AT4G19010" />
+<area shape=rect	coords=357,329,403,346	href="/dbget-bin/www_bget?ath:AT5G48930"	title="AT5G48930 (HCT)" />
+<area shape=rect	coords=443,449,489,466	href="/dbget-bin/www_bget?ath:AT2G40890"	title="AT2G40890 (CYP98A3)" />
+<area shape=rect	coords=443,329,489,346	href="/dbget-bin/www_bget?ath:AT2G40890"	title="AT2G40890 (CYP98A3)" />
+<area shape=rect	coords=537,449,583,466	href="/dbget-bin/www_bget?ath:AT5G48930"	title="AT5G48930 (HCT)" />
+<area shape=rect	coords=537,329,583,346	href="/dbget-bin/www_bget?ath:AT5G48930"	title="AT5G48930 (HCT)" />
+<area shape=rect	coords=589,308,635,325	href="/dbget-bin/www_bget?ath:AT1G51680+ath:AT1G62940+ath:AT1G65060+ath:AT3G21230+ath:AT3G21240+ath:AT4G05160+ath:AT4G19010"	title="AT1G51680 (4CL1), AT1G62940 (ACOS5), AT1G65060 (4CL3), AT3G21230 (4CL5), AT3G21240 (4CL2), AT4G05160, AT4G19010" />
+<area shape=rect	coords=663,244,709,261	href="/dbget-bin/www_bget?ath:AT5G54160"	title="AT5G54160 (OMT1)" />
+<area shape=rect	coords=818,244,864,261	href="/dbget-bin/www_bget?ath:AT4G36220+ath:AT5G04330"	title="AT4G36220 (FAH1), AT5G04330" />
+<area shape=rect	coords=935,241,981,258	href="/dbget-bin/www_bget?ath:AT5G54160"	title="AT5G54160 (OMT1)" />
+<area shape=rect	coords=793,418,839,435	href="/dbget-bin/www_bget?ath:AT3G24503"	title="AT3G24503 (ALDH2C4)" />
+<area shape=rect	coords=729,444,775,461	href="/dbget-bin/www_bget?ath:AT1G15950+ath:AT1G80820"	title="AT1G15950 (CCR1), AT1G80820 (CCR2)" />
+<area shape=rect	coords=973,418,1019,435	href="/dbget-bin/www_bget?ath:AT3G24503"	title="AT3G24503 (ALDH2C4)" />
+<area shape=rect	coords=1011,444,1057,461	href="/dbget-bin/www_bget?ath:AT1G15950+ath:AT1G80820"	title="AT1G15950 (CCR1), AT1G80820 (CCR2)" />
+<area shape=rect	coords=870,444,916,461	href="/dbget-bin/www_bget?ath:AT1G15950+ath:AT1G80820"	title="AT1G15950 (CCR1), AT1G80820 (CCR2)" />
+<area shape=rect	coords=357,449,403,466	href="/dbget-bin/www_bget?ath:AT5G48930"	title="AT5G48930 (HCT)" />
+<area shape=rect	coords=400,685,446,702	href="/dbget-bin/www_bget?ath:AT3G50740+ath:AT5G26310+ath:AT5G66690"	title="AT3G50740 (UGT72E1), AT5G26310 (UGT72E3), AT5G66690 (UGT72E2)" />
+<area shape=rect	coords=288,662,334,679	href="/dbget-bin/www_bget?ath:AT1G05240+ath:AT1G05250+ath:AT1G05260+ath:AT1G14540+ath:AT1G14550+ath:AT1G24110+ath:AT1G30870+ath:AT1G34510+ath:AT1G44970+ath:AT1G48130+ath:AT1G49570+ath:AT1G68850+ath:AT1G71695+ath:AT1G77100+ath:AT2G18140+ath:AT2G18150+ath:AT2G18980+ath:AT2G22420+ath:AT2G24800+ath:AT2G34060+ath:AT2G35380+ath:AT2G37130+ath:AT2G38380+ath:AT2G38390+ath:AT2G39040+ath:AT2G41480+ath:AT2G43480+ath:AT3G01190+ath:AT3G03670+ath:AT3G17070+ath:AT3G21770+ath:AT3G28200+ath:AT3G32980+ath:AT3G49110+ath:AT3G49120+ath:AT3G49960+ath:AT3G50990+ath:AT4G08770+ath:AT4G08780+ath:AT4G11290+ath:AT4G16270+ath:AT4G17690+ath:AT4G21960+ath:AT4G25980+ath:AT4G26010+ath:AT4G30170+ath:AT4G31760+ath:AT4G33420+ath:AT4G36430+ath:AT4G37520+ath:AT4G37530+ath:AT5G05340+ath:AT5G06720+ath:AT5G06730+ath:AT5G14130+ath:AT5G15180+ath:AT5G17820+ath:AT5G19880+ath:AT5G19890+ath:AT5G22410+ath:AT5G24070+ath:AT5G39580+ath:AT5G40150+ath:AT5G42180+ath:AT5G47000+ath:AT5G51890+ath:AT5G58390+ath:AT5G58400+ath:AT5G64100+ath:AT5G64110+ath:AT5G64120+ath:AT5G66390+ath:AT5G67400"	title="AT1G05240, AT1G05250, AT1G05260 (RCI3), AT1G14540, AT1G14550, AT1G24110, AT1G30870, AT1G34510, AT1G44970, AT1G48130 (PER1), AT1G49570, AT1G68850, AT1G71695, AT1G77100, AT2G18140, AT2G18150, AT2G18980, AT2G22420, AT2G24800, AT2G34060, AT2G35380, AT2G37130, AT2G38380, AT2G38390, AT2G39040, AT2G41480, AT2G43480, AT3G01190, AT3G03670, AT3G17070, AT3G21770, AT3G28200, AT3G32980, AT3G49110 (PRXCA), AT3G49120 (PRXCB), AT3G49960, AT3G50990, AT4G08770, AT4G08780, AT4G11290, AT4G16270, AT4G17690, AT4G21960 (PRXR1), AT4G25980, AT4G26010, AT4G30170, AT4G31760, AT4G33420, AT4G36430, AT4G37520, AT4G37530, AT5G05340, AT5G06720 (PA2), AT5G06730, AT5G14130, AT5G15180, AT5G17820, AT5G19880, AT5G19890, AT5G22410 (RHS18), AT5G24070, AT5G39580, AT5G40150, AT5G42180, AT5G47000, AT5G51890, AT5G58390, AT5G58400, AT5G64100, AT5G64110, AT5G64120, AT5G66390, AT5G67400 (RHS19)" />
+<area shape=rect	coords=729,548,775,565	href="/dbget-bin/www_bget?ath:AT2G21730+ath:AT2G21890+ath:AT3G19450+ath:AT4G34230+ath:AT4G37970+ath:AT4G37990+ath:AT4G39330"	title="AT2G21730 (CAD2), AT2G21890 (CAD3), AT3G19450 (ATCAD4), AT4G34230 (CAD5), AT4G37970 (CAD6), AT4G37990 (ELI3-2), AT4G39330 (CAD9)" />
+<area shape=rect	coords=1011,548,1057,565	href="/dbget-bin/www_bget?ath:AT2G21730+ath:AT2G21890+ath:AT3G19450+ath:AT4G34230+ath:AT4G37970+ath:AT4G37990+ath:AT4G39330"	title="AT2G21730 (CAD2), AT2G21890 (CAD3), AT3G19450 (ATCAD4), AT4G34230 (CAD5), AT4G37970 (CAD6), AT4G37990 (ELI3-2), AT4G39330 (CAD9)" />
+<area shape=rect	coords=870,548,916,565	href="/dbget-bin/www_bget?ath:AT2G21730+ath:AT2G21890+ath:AT3G19450+ath:AT4G34230+ath:AT4G37970+ath:AT4G37990+ath:AT4G39330"	title="AT2G21730 (CAD2), AT2G21890 (CAD3), AT3G19450 (ATCAD4), AT4G34230 (CAD5), AT4G37970 (CAD6), AT4G37990 (ELI3-2), AT4G39330 (CAD9)" />
+<area shape=rect	coords=315,548,361,565	href="/dbget-bin/www_bget?ath:AT2G21730+ath:AT2G21890+ath:AT3G19450+ath:AT4G34230+ath:AT4G37970+ath:AT4G37990+ath:AT4G39330"	title="AT2G21730 (CAD2), AT2G21890 (CAD3), AT3G19450 (ATCAD4), AT4G34230 (CAD5), AT4G37970 (CAD6), AT4G37990 (ELI3-2), AT4G39330 (CAD9)" />
+<area shape=rect	coords=588,548,634,565	href="/dbget-bin/www_bget?ath:AT2G21730+ath:AT2G21890+ath:AT3G19450+ath:AT4G34230+ath:AT4G37970+ath:AT4G37990+ath:AT4G39330"	title="AT2G21730 (CAD2), AT2G21890 (CAD3), AT3G19450 (ATCAD4), AT4G34230 (CAD5), AT4G37970 (CAD6), AT4G37990 (ELI3-2), AT4G39330 (CAD9)" />
+<area shape=rect	coords=985,662,1031,679	href="/dbget-bin/www_bget?ath:AT1G05240+ath:AT1G05250+ath:AT1G05260+ath:AT1G14540+ath:AT1G14550+ath:AT1G24110+ath:AT1G30870+ath:AT1G34510+ath:AT1G44970+ath:AT1G48130+ath:AT1G49570+ath:AT1G68850+ath:AT1G71695+ath:AT1G77100+ath:AT2G18140+ath:AT2G18150+ath:AT2G18980+ath:AT2G22420+ath:AT2G24800+ath:AT2G34060+ath:AT2G35380+ath:AT2G37130+ath:AT2G38380+ath:AT2G38390+ath:AT2G39040+ath:AT2G41480+ath:AT2G43480+ath:AT3G01190+ath:AT3G03670+ath:AT3G17070+ath:AT3G21770+ath:AT3G28200+ath:AT3G32980+ath:AT3G49110+ath:AT3G49120+ath:AT3G49960+ath:AT3G50990+ath:AT4G08770+ath:AT4G08780+ath:AT4G11290+ath:AT4G16270+ath:AT4G17690+ath:AT4G21960+ath:AT4G25980+ath:AT4G26010+ath:AT4G30170+ath:AT4G31760+ath:AT4G33420+ath:AT4G36430+ath:AT4G37520+ath:AT4G37530+ath:AT5G05340+ath:AT5G06720+ath:AT5G06730+ath:AT5G14130+ath:AT5G15180+ath:AT5G17820+ath:AT5G19880+ath:AT5G19890+ath:AT5G22410+ath:AT5G24070+ath:AT5G39580+ath:AT5G40150+ath:AT5G42180+ath:AT5G47000+ath:AT5G51890+ath:AT5G58390+ath:AT5G58400+ath:AT5G64100+ath:AT5G64110+ath:AT5G64120+ath:AT5G66390+ath:AT5G67400"	title="AT1G05240, AT1G05250, AT1G05260 (RCI3), AT1G14540, AT1G14550, AT1G24110, AT1G30870, AT1G34510, AT1G44970, AT1G48130 (PER1), AT1G49570, AT1G68850, AT1G71695, AT1G77100, AT2G18140, AT2G18150, AT2G18980, AT2G22420, AT2G24800, AT2G34060, AT2G35380, AT2G37130, AT2G38380, AT2G38390, AT2G39040, AT2G41480, AT2G43480, AT3G01190, AT3G03670, AT3G17070, AT3G21770, AT3G28200, AT3G32980, AT3G49110 (PRXCA), AT3G49120 (PRXCB), AT3G49960, AT3G50990, AT4G08770, AT4G08780, AT4G11290, AT4G16270, AT4G17690, AT4G21960 (PRXR1), AT4G25980, AT4G26010, AT4G30170, AT4G31760, AT4G33420, AT4G36430, AT4G37520, AT4G37530, AT5G05340, AT5G06720 (PA2), AT5G06730, AT5G14130, AT5G15180, AT5G17820, AT5G19880, AT5G19890, AT5G22410 (RHS18), AT5G24070, AT5G39580, AT5G40150, AT5G42180, AT5G47000, AT5G51890, AT5G58390, AT5G58400, AT5G64100, AT5G64110, AT5G64120, AT5G66390, AT5G67400 (RHS19)" />
+<area shape=rect	coords=843,662,889,679	href="/dbget-bin/www_bget?ath:AT1G05240+ath:AT1G05250+ath:AT1G05260+ath:AT1G14540+ath:AT1G14550+ath:AT1G24110+ath:AT1G30870+ath:AT1G34510+ath:AT1G44970+ath:AT1G48130+ath:AT1G49570+ath:AT1G68850+ath:AT1G71695+ath:AT1G77100+ath:AT2G18140+ath:AT2G18150+ath:AT2G18980+ath:AT2G22420+ath:AT2G24800+ath:AT2G34060+ath:AT2G35380+ath:AT2G37130+ath:AT2G38380+ath:AT2G38390+ath:AT2G39040+ath:AT2G41480+ath:AT2G43480+ath:AT3G01190+ath:AT3G03670+ath:AT3G17070+ath:AT3G21770+ath:AT3G28200+ath:AT3G32980+ath:AT3G49110+ath:AT3G49120+ath:AT3G49960+ath:AT3G50990+ath:AT4G08770+ath:AT4G08780+ath:AT4G11290+ath:AT4G16270+ath:AT4G17690+ath:AT4G21960+ath:AT4G25980+ath:AT4G26010+ath:AT4G30170+ath:AT4G31760+ath:AT4G33420+ath:AT4G36430+ath:AT4G37520+ath:AT4G37530+ath:AT5G05340+ath:AT5G06720+ath:AT5G06730+ath:AT5G14130+ath:AT5G15180+ath:AT5G17820+ath:AT5G19880+ath:AT5G19890+ath:AT5G22410+ath:AT5G24070+ath:AT5G39580+ath:AT5G40150+ath:AT5G42180+ath:AT5G47000+ath:AT5G51890+ath:AT5G58390+ath:AT5G58400+ath:AT5G64100+ath:AT5G64110+ath:AT5G64120+ath:AT5G66390+ath:AT5G67400"	title="AT1G05240, AT1G05250, AT1G05260 (RCI3), AT1G14540, AT1G14550, AT1G24110, AT1G30870, AT1G34510, AT1G44970, AT1G48130 (PER1), AT1G49570, AT1G68850, AT1G71695, AT1G77100, AT2G18140, AT2G18150, AT2G18980, AT2G22420, AT2G24800, AT2G34060, AT2G35380, AT2G37130, AT2G38380, AT2G38390, AT2G39040, AT2G41480, AT2G43480, AT3G01190, AT3G03670, AT3G17070, AT3G21770, AT3G28200, AT3G32980, AT3G49110 (PRXCA), AT3G49120 (PRXCB), AT3G49960, AT3G50990, AT4G08770, AT4G08780, AT4G11290, AT4G16270, AT4G17690, AT4G21960 (PRXR1), AT4G25980, AT4G26010, AT4G30170, AT4G31760, AT4G33420, AT4G36430, AT4G37520, AT4G37530, AT5G05340, AT5G06720 (PA2), AT5G06730, AT5G14130, AT5G15180, AT5G17820, AT5G19880, AT5G19890, AT5G22410 (RHS18), AT5G24070, AT5G39580, AT5G40150, AT5G42180, AT5G47000, AT5G51890, AT5G58390, AT5G58400, AT5G64100, AT5G64110, AT5G64120, AT5G66390, AT5G67400 (RHS19)" />
+<area shape=rect	coords=703,662,749,679	href="/dbget-bin/www_bget?ath:AT1G05240+ath:AT1G05250+ath:AT1G05260+ath:AT1G14540+ath:AT1G14550+ath:AT1G24110+ath:AT1G30870+ath:AT1G34510+ath:AT1G44970+ath:AT1G48130+ath:AT1G49570+ath:AT1G68850+ath:AT1G71695+ath:AT1G77100+ath:AT2G18140+ath:AT2G18150+ath:AT2G18980+ath:AT2G22420+ath:AT2G24800+ath:AT2G34060+ath:AT2G35380+ath:AT2G37130+ath:AT2G38380+ath:AT2G38390+ath:AT2G39040+ath:AT2G41480+ath:AT2G43480+ath:AT3G01190+ath:AT3G03670+ath:AT3G17070+ath:AT3G21770+ath:AT3G28200+ath:AT3G32980+ath:AT3G49110+ath:AT3G49120+ath:AT3G49960+ath:AT3G50990+ath:AT4G08770+ath:AT4G08780+ath:AT4G11290+ath:AT4G16270+ath:AT4G17690+ath:AT4G21960+ath:AT4G25980+ath:AT4G26010+ath:AT4G30170+ath:AT4G31760+ath:AT4G33420+ath:AT4G36430+ath:AT4G37520+ath:AT4G37530+ath:AT5G05340+ath:AT5G06720+ath:AT5G06730+ath:AT5G14130+ath:AT5G15180+ath:AT5G17820+ath:AT5G19880+ath:AT5G19890+ath:AT5G22410+ath:AT5G24070+ath:AT5G39580+ath:AT5G40150+ath:AT5G42180+ath:AT5G47000+ath:AT5G51890+ath:AT5G58390+ath:AT5G58400+ath:AT5G64100+ath:AT5G64110+ath:AT5G64120+ath:AT5G66390+ath:AT5G67400"	title="AT1G05240, AT1G05250, AT1G05260 (RCI3), AT1G14540, AT1G14550, AT1G24110, AT1G30870, AT1G34510, AT1G44970, AT1G48130 (PER1), AT1G49570, AT1G68850, AT1G71695, AT1G77100, AT2G18140, AT2G18150, AT2G18980, AT2G22420, AT2G24800, AT2G34060, AT2G35380, AT2G37130, AT2G38380, AT2G38390, AT2G39040, AT2G41480, AT2G43480, AT3G01190, AT3G03670, AT3G17070, AT3G21770, AT3G28200, AT3G32980, AT3G49110 (PRXCA), AT3G49120 (PRXCB), AT3G49960, AT3G50990, AT4G08770, AT4G08780, AT4G11290, AT4G16270, AT4G17690, AT4G21960 (PRXR1), AT4G25980, AT4G26010, AT4G30170, AT4G31760, AT4G33420, AT4G36430, AT4G37520, AT4G37530, AT5G05340, AT5G06720 (PA2), AT5G06730, AT5G14130, AT5G15180, AT5G17820, AT5G19880, AT5G19890, AT5G22410 (RHS18), AT5G24070, AT5G39580, AT5G40150, AT5G42180, AT5G47000, AT5G51890, AT5G58390, AT5G58400, AT5G64100, AT5G64110, AT5G64120, AT5G66390, AT5G67400 (RHS19)" />
+<area shape=rect	coords=1094,685,1140,702	href="/dbget-bin/www_bget?ath:AT3G50740+ath:AT5G26310+ath:AT5G66690"	title="AT3G50740 (UGT72E1), AT5G26310 (UGT72E3), AT5G66690 (UGT72E2)" />
+<area shape=rect	coords=814,685,860,702	href="/dbget-bin/www_bget?ath:AT3G50740+ath:AT5G26310+ath:AT5G66690"	title="AT3G50740 (UGT72E1), AT5G26310 (UGT72E3), AT5G66690 (UGT72E2)" />
+<area shape=rect	coords=1051,244,1097,261	href="/dbget-bin/www_bget?ath:AT3G21560"	title="AT3G21560 (UGT84A2)" />
+<area shape=rect	coords=1138,244,1184,261	href="/dbget-bin/www_bget?ath:AT2G22990"	title="AT2G22990 (SNG1)" />
+<area shape=rect	coords=1099,269,1145,286	href="/dbget-bin/www_bget?ath:AT5G09640"	title="AT5G09640 (SCPL19)" />
+<area shape=rect	coords=1009,333,1055,350	href="/dbget-bin/www_bget?ath:AT1G51680+ath:AT1G62940+ath:AT1G65060+ath:AT3G21230+ath:AT3G21240+ath:AT4G05160+ath:AT4G19010"	title="AT1G51680 (4CL1), AT1G62940 (ACOS5), AT1G65060 (4CL3), AT3G21230 (4CL5), AT3G21240 (4CL2), AT4G05160, AT4G19010" />
+<area shape=rect	coords=870,308,916,325	href="/dbget-bin/www_bget?ath:AT1G51680+ath:AT1G62940+ath:AT1G65060+ath:AT3G21230+ath:AT3G21240+ath:AT4G05160+ath:AT4G19010"	title="AT1G51680 (4CL1), AT1G62940 (ACOS5), AT1G65060 (4CL3), AT3G21230 (4CL5), AT3G21240 (4CL2), AT4G05160, AT4G19010" />
+<area shape=rect	coords=729,308,775,325	href="/dbget-bin/www_bget?ath:AT1G51680+ath:AT1G62940+ath:AT1G65060+ath:AT3G21230+ath:AT3G21240+ath:AT4G05160+ath:AT4G19010"	title="AT1G51680 (4CL1), AT1G62940 (ACOS5), AT1G65060 (4CL3), AT3G21230 (4CL5), AT3G21240 (4CL2), AT4G05160, AT4G19010" />
+<area shape=rect	coords=663,388,709,405	href="/dbget-bin/www_bget?ath:AT1G24735+ath:AT1G67980+ath:AT4G26220+ath:AT4G34050"	title="AT1G24735, AT1G67980 (CCOAMT), AT4G26220, AT4G34050 (CCoAOMT1)" />
+<area shape=rect	coords=663,593,709,610	href="/dbget-bin/www_bget?ath:AT5G54160"	title="AT5G54160 (OMT1)" />
+<area shape=rect	coords=663,509,709,526	href="/dbget-bin/www_bget?ath:AT5G54160"	title="AT5G54160 (OMT1)" />
+<area shape=rect	coords=820,591,866,608	href="/dbget-bin/www_bget?ath:AT4G36220+ath:AT5G04330"	title="AT4G36220 (FAH1), AT5G04330" />
+<area shape=rect	coords=820,509,866,526	href="/dbget-bin/www_bget?ath:AT4G36220+ath:AT5G04330"	title="AT4G36220 (FAH1), AT5G04330" />
+<area shape=rect	coords=935,595,981,612	href="/dbget-bin/www_bget?ath:AT5G54160"	title="AT5G54160 (OMT1)" />
+<area shape=rect	coords=935,512,981,529	href="/dbget-bin/www_bget?ath:AT5G54160"	title="AT5G54160 (OMT1)" />
+<area shape=rect	coords=587,471,633,488	href="/dbget-bin/www_bget?ath:AT1G15950+ath:AT1G80820"	title="AT1G15950 (CCR1), AT1G80820 (CCR2)" />
+<area shape=rect	coords=935,388,981,405	href="/dbget-bin/www_bget?ath:AT1G24735+ath:AT1G67980+ath:AT4G26220+ath:AT4G34050"	title="AT1G24735, AT1G67980 (CCOAMT), AT4G26220, AT4G34050 (CCoAOMT1)" />
+<area shape=rect	coords=218,244,264,261	href="/dbget-bin/www_bget?ath:AT2G30490"	title="AT2G30490 (C4H)" />
+<area shape=rect	coords=233,383,279,400	href="/dbget-bin/www_bget?ath:AT2G30490"	title="AT2G30490 (C4H)" />
+<area shape=rect	coords=443,142,489,159	href="/dbget-bin/www_bget?ath:AT1G74540+ath:AT1G74550"	title="AT1G74540 (CYP98A8), AT1G74550 (CYP98A9)" />
+<area shape=rect	coords=820,142,866,159	href="/dbget-bin/www_bget?ath:AT1G74540"	title="AT1G74540 (CYP98A8)" />
+<area shape=rect	coords=935,142,981,159	href="/dbget-bin/www_bget?ath:AT1G67990"	title="AT1G67990 (TSM1)" />
+<area shape=rect	coords=493,288,539,305	href="/dbget-bin/www_bget?ath:AT1G52760"	title="AT1G52760 (LysoPL2)" />
+<area shape=rect	coords=99,114,249,148	href="/kegg-bin/show_pathway?ath00400"	title="ath00400: Phenylalanine, tyrosine and tryptophan biosynthesis" onmouseover="popupTimer(&quot;ath00400&quot;, &quot;ath00400: Phenylalanine, tyrosine and tryptophan biosynthesis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=170,545,298,570	href="/kegg-bin/show_pathway?ath00941"	title="ath00941: Flavonoid biosynthesis" onmouseover="popupTimer(&quot;ath00941&quot;, &quot;ath00941: Flavonoid biosynthesis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=40,45,302,70	href="/dbget-bin/www_bget?ath00940"	title="ath00940: Phenylpropanoid biosynthesis" onmouseover="popupTimer(&quot;ath00940&quot;, &quot;ath00940: Phenylpropanoid biosynthesis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=145,573,319,607	href="/kegg-bin/show_pathway?ath00945"	title="ath00945: Stilbenoid, diarylheptanoid and gingerol biosynthesis" onmouseover="popupTimer(&quot;ath00945&quot;, &quot;ath00945: Stilbenoid, diarylheptanoid and gingerol biosynthesis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=199,270,277,304	href="/kegg-bin/show_pathway?ath00130"	title="ath00130: Ubiquinone and other terpenoid-quinone biosynthesis" onmouseover="popupTimer(&quot;ath00130&quot;, &quot;ath00130: Ubiquinone and other terpenoid-quinone biosynthesis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+</body>
+</html>
